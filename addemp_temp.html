@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Form Card -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(45deg, #007bff, #00c6ff);">
+                    <h4><i class="bi bi-person-plus-fill"></i> Add New Employee</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/addemp" method="post">
+                        
+                        <!-- Employee Number -->
+                        <div class="mb-3">
+                            <label for="empno" class="form-label">Employee Number</label>
+                            <input type="text" class="form-control" id="empno" name="empno" placeholder="Enter employee number" required>
+                        </div>
+                        <!-- Employee Name -->
+                        <div class="mb-3">
+                            <label for="ename" class="form-label">Employee Name</label>
+                            <input type="text" class="form-control" id="ename" name="ename" placeholder="Enter employee name" required>
+                        </div>
+                        <!-- Job Title -->
+                        <div class="mb-3">
+                            <label for="job" class="form-label">Job Title</label>
+                            <input type="text" class="form-control" id="job" name="job" placeholder="Enter job title" required>
+                        </div>
+                        <!-- Salary -->
+                        <div class="mb-3">
+                            <label for="sal" class="form-label">Salary</label>
+                            <input type="number" class="form-control" id="sal" name="sal" placeholder="Enter salary" required>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-check-circle"></i> Create Employee
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(to right, #ece9e6, #ffffff);
+        min-height: 100vh;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(45deg, #0056b3, #007bff);
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Form Section -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header text-white text-center py-3" style="background: linear-gradient(45deg, #007bff, #00c6ff);">
+                    <h4><i class="bi bi-pencil-square"></i> Update Employee</h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted text-center">Enter the Employee Number and Salary to update the record.</p>
+                    <form action="/updateemp" method="POST">
+                        <!-- Employee Number -->
+                        <div class="mb-3">
+                            <label for="empno" class="form-label">Employee Number</label>
+                            <input type="text" class="form-control" id="empno" name="empno" placeholder="Enter Employee Number" required>
+                        </div>
+                        <!-- Employee Salary -->
+                        <div class="mb-3">
+                            <label for="sal" class="form-label">Employee Salary</label>
+                            <input type="text" class="form-control" id="sal" name="sal" placeholder="Enter New Salary" required>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-pencil-fill"></i> Update Employee
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(to right, #f8f9fa, #eceff1);
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        font-weight: 600;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        border: none;
+        font-weight: bold;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(45deg, #00c6ff, #007bff);
+    }
+</style>
+{% endblock %}

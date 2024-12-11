@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+{% block content %}
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: #007bff;">Employee Details</h2>
+        <p class="text-muted">A comprehensive list of employees with their details.</p>
+    </div>
+
+    <!-- Employee Table -->
+    <div class="table-responsive shadow-lg rounded">
+        <table class="table table-hover align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th>Employee No</th>
+                    <th>Employee Name</th>
+                    <th>Job Role</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in emp %}
+                <tr>
+                    <td><span class="badge bg-info">{{ row.0 }}</span></td>
+                    <td>{{ row.1 }}</td>
+                    <td>{{ row.2 }}</td>
+                    <td><i class="bi bi-currency-dollar"></i> {{ row.3 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    body {
+        background: linear-gradient(to right, #e9f4fc, #fefeff);
+        font-family: 'Poppins', sans-serif;
+        min-height: 100vh;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .table {
+        margin: auto;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f1f9ff;
+        transition: background-color 0.3s ease;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5em 1em;
+    }
+
+    .table-primary {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+        font-weight: bold;
+    }
+
+    .table-hover tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+</style>
+{% endblock %}
